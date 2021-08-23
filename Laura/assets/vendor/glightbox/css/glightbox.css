@@ -323,23 +323,23 @@
 */
 
 .glightbox-mobile .glightbox-container .gslide-description {
-  height: auto !important;
-  width: 100%;
+  /* height: auto !important; */
+  /* width: 100%; */
   background: transparent;
   position: absolute;
-  bottom: 15px;
+  /* bottom: 15px;
   padding: 19px 11px;
   max-width: 100vw !important;
   -webkit-box-ordinal-group: 3 !important;
   -ms-flex-order: 2 !important;
-  order: 2 !important;
-  max-height: 78vh;
-  overflow: auto !important;
+  order: 2 !important; */
+  /* max-height: 78vh; */
+  overflow: scroll !important;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.75)));
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
   -webkit-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
 }
 
 .glightbox-mobile .glightbox-container .gslide-title {
@@ -838,7 +838,7 @@ iframe.wait-autoplay {
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .glightbox-container .ginner-container {
     width: auto;
     height: auto;

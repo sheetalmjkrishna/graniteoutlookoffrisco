@@ -5,7 +5,6 @@
 * License: https://bootstrapmade.com/license/
 */
 
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -34,10 +33,16 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+#hero h1 {
+  text-align: center;
+}
 
 /*--------------------------------------------------------------
 # General Components
 --------------------------------------------------------------*/
+.portfolio-info h4, .gslide-title{
+  text-transform: capitalize;
+}
 
 .yellow-button,
 .yellow-button:hover,
@@ -62,22 +67,28 @@ h6 {
   background: #ffb727;
   width: 40px;
   height: 40px;
-  border-radius: 4px;
+  border-radius: 50px;
   transition: all 0.4s;
   color: white;
 }
+.auth {
+  display: none;
+}
 
-#log-in {
-  float: right;
+#log-in,
+#log-out {
   background: none;
   border: none;
   outline: none;
-  color: #ffb727;
-  position: absolute;
-  right: 15px;
+  color: grey;
+}
+
+#deleteImageConfirmationModal #photo {
+  max-width: 100%;
 }
 
 #log-in:hover,
+#log-out:hover,
 .yellow-button:hover {
   cursor: pointer;
 }
@@ -130,7 +141,18 @@ select.form-control {
   -webkit-appearance: auto;
 }
 
-@media (min-width: 500px) {
+.transparent {
+  background-color: transparent;
+}
+
+#viewPendingReviewsModal .modal-dialog,
+  #editApprovedReviewsModal .modal-dialog {
+    display: flex;
+    justify-content: center;
+    max-width: 80%;
+  }
+
+@media (max-width: 768px) {
   #viewPendingReviewsModal .modal-content,
   #editApprovedReviewsModal .modal-content {
     width: 80%;
@@ -141,8 +163,24 @@ select.form-control {
     justify-content: center;
     max-width: 100%;
   }
+  .gslide-description {
+    max-height: 30% !important;
+    bottom: 0 !important;
+  }
+
+  .gslide-image img.zoomable {
+    position: absolute;
+    top: 0;
+    max-height: 70%;
+  }
 }
 
+@media (max-width: 400px) {
+  .portfolio #portfolio-flters li {
+    padding: 5px !important;
+    margin: 0px !important;
+  }
+}
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -162,7 +200,7 @@ select.form-control {
 
 .add-new i,
 .back-to-top i {
-  font-size: 28px;
+  font-size: 20px;
   color: #fff;
   line-height: 0;
 }
@@ -176,7 +214,6 @@ select.form-control {
   visibility: visible;
   opacity: 1;
 }
-
 
 /*--------------------------------------------------------------
 # Header
@@ -198,15 +235,9 @@ select.form-control {
   background: rgba(25, 28, 31, 0.8);
 }
 
-.log-in {
-  float: right;
-}
-
-
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-
 
 /**
 * Desktop Navigation 
@@ -229,7 +260,9 @@ select.form-control {
 }
 
 .navbar a,
-.navbar a:focus {
+.navbar button,
+.navbar a:focus,
+.navbar button:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -245,16 +278,19 @@ select.form-control {
 }
 
 .navbar a i,
-.navbar a:focus i {
+.navbar a:focus i .navbar button i,
+.navbar button:focus i {
   font-size: 12px;
   line-height: 0;
   margin-left: 5px;
 }
 
 .navbar a:hover,
+.navbar button:hover,
 .navbar .active,
 .navbar .active:focus,
-.navbar li:hover>a {
+.navbar li:hover > a,
+.navbar li:hover > button {
   color: #ffb727;
 }
 
@@ -287,17 +323,20 @@ select.form-control {
   letter-spacing: 1px;
 }
 
-.navbar .dropdown ul a i {
+.navbar .dropdown ul a i,
+.navbar .dropdown ul button i {
   font-size: 12px;
 }
 
 .navbar .dropdown ul a:hover,
+.navbar .dropdown ul button:hover,
 .navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover>a {
+.navbar .dropdown ul li:hover > a,
+.navbar .dropdown ul li:hover > button {
   color: #ffb727;
 }
 
-.navbar .dropdown:hover>ul {
+.navbar .dropdown:hover > ul {
   opacity: 1;
   top: 100%;
   visibility: visible;
@@ -309,7 +348,7 @@ select.form-control {
   visibility: hidden;
 }
 
-.navbar .dropdown .dropdown:hover>ul {
+.navbar .dropdown .dropdown:hover > ul {
   opacity: 1;
   top: 0;
   left: 100%;
@@ -320,11 +359,10 @@ select.form-control {
   .navbar .dropdown .dropdown ul {
     left: -90%;
   }
-  .navbar .dropdown .dropdown:hover>ul {
+  .navbar .dropdown .dropdown:hover > ul {
     left: -100%;
   }
 }
-
 
 /**
 * Mobile Navigation 
@@ -380,15 +418,18 @@ select.form-control {
   transition: 0.3s;
 }
 
-.navbar-mobile a {
+.navbar-mobile a,
+.navbar-mobile button {
   padding: 10px 20px;
   font-size: 14px;
   color: #3b434a;
 }
 
 .navbar-mobile a:hover,
+.navbar-mobile button:hover,
 .navbar-mobile .active,
-.navbar-mobile li:hover>a {
+.navbar-mobile li:hover > a,
+.navbar-mobile li:hover > button {
   color: #ffb727;
 }
 
@@ -412,24 +453,27 @@ select.form-control {
   min-width: 200px;
 }
 
-.navbar-mobile .dropdown ul a {
+.navbar-mobile .dropdown ul a,
+.navbar-mobile .dropdown ul button {
   padding: 10px 20px;
 }
 
-.navbar-mobile .dropdown ul a i {
+.navbar-mobile .dropdown ul a i,
+.navbar-mobile .dropdown ul button i {
   font-size: 12px;
 }
 
 .navbar-mobile .dropdown ul a:hover,
+.navbar-mobile .dropdown ul button:hover,
 .navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover>a {
+.navbar-mobile .dropdown ul li:hover > a,
+.navbar-mobile .dropdown ul li:hover > button {
   color: #ffb727;
 }
 
-.navbar-mobile .dropdown>.dropdown-active {
+.navbar-mobile .dropdown > .dropdown-active {
   display: block;
 }
-
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -530,7 +574,6 @@ select.form-control {
   }
 }
 
-
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -589,7 +632,6 @@ section {
   }
 }
 
-
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
@@ -628,11 +670,11 @@ section {
   font-size: 14px;
 }
 
-.breadcrumbs ol li+li {
+.breadcrumbs ol li + li {
   padding-left: 10px;
 }
 
-.breadcrumbs ol li+li::before {
+.breadcrumbs ol li + li::before {
   display: inline-block;
   padding-right: 10px;
   color: #6c757d;
@@ -650,7 +692,6 @@ section {
     display: inline-block;
   }
 }
-
 
 /*--------------------------------------------------------------
 # About Me
@@ -732,11 +773,11 @@ section {
   color: #82909c;
 }
 
-.about .image {
+/* .about .image {
   background: url("../img/me.jpg") center center no-repeat;
   background-size: cover;
   min-height: 500px;
-}
+} */
 
 .about .skills-content {
   margin-top: 30px;
@@ -771,10 +812,9 @@ section {
 .about .skills-content .progress-bar {
   width: 1px;
   height: 10px;
-  transition: .9s;
+  transition: 0.9s;
   background-color: #ffb727;
 }
-
 
 /*--------------------------------------------------------------
 # My Resume
@@ -837,7 +877,6 @@ section {
   border: 2px solid #82909c;
 }
 
-
 /*--------------------------------------------------------------
 # My Services
 --------------------------------------------------------------*/
@@ -894,7 +933,6 @@ section {
 .services .icon-box:hover .title a {
   color: #ffb727;
 }
-
 
 /*--------------------------------------------------------------
 # Testimonials
@@ -994,7 +1032,6 @@ section {
   }
 }
 
-
 /*--------------------------------------------------------------
 # My Portfolio
 --------------------------------------------------------------*/
@@ -1002,6 +1039,7 @@ section {
 .portfolio #portfolio-flters {
   list-style: none;
   margin-bottom: 20px;
+  padding: 0px;
 }
 
 .portfolio #portfolio-flters li {
@@ -1089,7 +1127,6 @@ section {
   opacity: 1;
 }
 
-
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
@@ -1107,7 +1144,10 @@ section {
   position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -1115,7 +1155,10 @@ section {
   border: 1px solid #ffb727;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet-active {
   background-color: #ffb727;
 }
 
@@ -1138,7 +1181,7 @@ section {
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.portfolio-details .portfolio-info ul li + li {
   margin-top: 10px;
 }
 
@@ -1155,7 +1198,6 @@ section {
 .portfolio-details .portfolio-description p {
   padding: 0;
 }
-
 
 /*--------------------------------------------------------------
 # Pricing
@@ -1268,7 +1310,6 @@ section {
   color: #fff;
 }
 
-
 /*--------------------------------------------------------------
 # Contact Me
 --------------------------------------------------------------*/
@@ -1348,7 +1389,7 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.contact .php-email-form .error-message br + br {
   margin-top: 25px;
 }
 
@@ -1431,7 +1472,6 @@ section {
     transform: rotate(360deg);
   }
 }
-
 
 /*--------------------------------------------------------------
 # Footer
