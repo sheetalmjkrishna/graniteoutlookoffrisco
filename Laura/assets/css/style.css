@@ -696,45 +696,52 @@ section {
 /*--------------------------------------------------------------
 # About Me
 --------------------------------------------------------------*/
+.team .row{
+  justify-content: space-evenly;
+}
 
-.about .content h3 {
+.team img{
+  margin: 10px;
+}
+
+.about .content h3, .team .content h3 {
   font-weight: 700;
   font-size: 26px;
   color: #3b434a;
   text-transform: uppercase;
 }
 
-.about .content ul {
+.about .content ul, .team .content ul {
   list-style: none;
   padding: 0;
 }
 
-.about .content ul li {
+.about .content ul li, .team .content ul li {
   margin-bottom: 20px;
   display: flex;
   align-items: center;
 }
 
-.about .content ul strong {
+.about .content ul strong, .team .content ul strong {
   margin-right: 10px;
 }
 
-.about .content ul i {
+.about .content ul i, .team .content ul i {
   font-size: 16px;
   margin-right: 5px;
   color: #ffb727;
   line-height: 0;
 }
 
-.about .content p:last-child {
+.about .content p:last-child, .team .content p:last-child {
   margin-bottom: 0;
 }
 
-.about .content .count-box {
+.about .content .count-box, .team .content .count-box {
   width: 100%;
 }
 
-.about .content .count-box i {
+.about .content .count-box i, .team .content .count-box i {
   display: block;
   font-size: 36px;
   color: #ffb727;
@@ -742,7 +749,7 @@ section {
   line-height: 0;
 }
 
-.about .content .count-box span {
+.about .content .count-box span, .team .content .count-box span {
   font-size: 36px;
   line-height: 30px;
   display: block;
@@ -751,7 +758,7 @@ section {
   margin-left: 50px;
 }
 
-.about .content .count-box p {
+.about .content .count-box p, .team .content .count-box p {
   padding: 15px 0 0 0;
   margin: 0 0 0 50px;
   font-family: "Raleway", sans-serif;
@@ -759,7 +766,7 @@ section {
   color: #5d6a75;
 }
 
-.about .content .count-box a {
+.about .content .count-box a, .team .content .count-box a {
   font-weight: 600;
   display: block;
   margin-top: 20px;
@@ -769,7 +776,7 @@ section {
   transition: ease-in-out 0.3s;
 }
 
-.about .content .count-box a:hover {
+.about .content .count-box a:hover, .team .content .count-box a:hover {
   color: #82909c;
 }
 
@@ -779,18 +786,18 @@ section {
   min-height: 500px;
 } */
 
-.about .skills-content {
+.about .skills-content, .team .skills-content {
   margin-top: 30px;
 }
 
-.about .skills-content .progress {
+.about .skills-content .progress, .team .skills-content .progress {
   height: 60px;
   display: block;
   background: none;
   border-radius: 0;
 }
 
-.about .skills-content .progress .skill {
+.about .skills-content .progress .skill, .team .skills-content .progress .skill {
   padding: 10px 0;
   margin: 0 0 6px 0;
   text-transform: uppercase;
@@ -800,16 +807,16 @@ section {
   color: #3b434a;
 }
 
-.about .skills-content .progress .skill .val {
+.about .skills-content .progress .skill .val, .team .skills-content .progress .skill .val {
   float: right;
   font-style: normal;
 }
 
-.about .skills-content .progress-bar-wrap {
+.about .skills-content .progress-bar-wrap, .team .skills-content .progress-bar-wrap {
   background: #e6e8eb;
 }
 
-.about .skills-content .progress-bar {
+.about .skills-content .progress-bar, .team .skills-content .progress-bar {
   width: 1px;
   height: 10px;
   transition: 0.9s;
