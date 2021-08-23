@@ -317,19 +317,21 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         showHideFields(true);
     } else {
-        showHideFields(false);
+        showHideFields(false, false);
     }
 });
 
-function showHideFields(show = false) {
+function showHideFields(show = false, message = true) {
     if (show) {
         $("#log-in").hide();
         $(".auth").show();
-        showMessage("You have successfully logged in!", "alert alert-success");
+        if(message)
+            showMessage("You have successfully logged in!", "alert alert-success");
     } else {
         $("#log-in").show();
         $(".auth").attr("style", "display: none !important");
-        showMessage("You have successfully logged out!", "alert alert-success");
+        if(message)
+            showMessage("You have successfully logged out!", "alert alert-success");
     }
 }
 
