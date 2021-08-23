@@ -2482,8 +2482,6 @@
     openEffect: 'zoom',
     closeEffect: 'zoom',
     slideEffect: 'slide',
-    moreText: 'See more',
-    moreLength: 60,
     cssEfects: {
       fade: {
         "in": 'fadeIn',

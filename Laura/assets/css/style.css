@@ -166,12 +166,13 @@ select.form-control {
   .gslide-description {
     max-height: 30% !important;
     bottom: 0 !important;
+    max-width: 100% !important;
   }
 
   .gslide-image img.zoomable {
-    position: absolute;
-    top: 0;
-    max-height: 70%;
+    position: absolute !important;
+    top: 60px !important;
+    max-height: 70% !important;
   }
 }
 
@@ -1091,6 +1092,8 @@ section {
   transition: all ease-in-out 0.3s;
   background: rgba(0, 0, 0, 0.5);
   padding: 10px 15px;
+  max-height: -webkit-fill-available;
+  overflow: scroll;
 }
 
 .portfolio .portfolio-item .portfolio-info h4 {
